@@ -21,6 +21,10 @@ myGarage = Garage(20,[])
 
 def run():
     while True:
+        tickets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        parking_spaces = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t']
+        currentTicket = {}
+
         response = input("Are you entering? or Leaving? : ")
         if response.lower() == "leaving":
             hours = input("How many hours were you here rounded to nearest hour?: ")
@@ -29,6 +33,8 @@ def run():
             costIn = input("Your total cost is $"+ stCost + " please enter that amount now: ")
             if costIn == stCost:
                 myGarage.removeCar()
+                tickets.append(currentTicket[0])
+                
             else:
                 print("please enter $"+ stCost + " as a whole integer: ")
             
@@ -38,5 +44,9 @@ def run():
         else:
             myGarage.addCar()
             print("Here is your ticket, please keep track of the time that you are parked here. ")
+            currentTicket.append(tickets[0])
             
+                    
+
+
 run()
